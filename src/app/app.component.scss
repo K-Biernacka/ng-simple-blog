@@ -1,0 +1,35 @@
+.body-image {
+  background-image: url("/assets/stars.jpg");
+  height: 100vh;
+  background-size: cover;
+  .nav-icon {
+    display: flex;
+    justify-content: flex-end;
+  }
+  h1 {
+    text-align: center;
+    color: #ffffff;
+    font-family: 'Raleway', sans-serif;
+    font-size: 60px;
+  }
+  .fa-bars {
+    color: white;
+    font-size: 40px;
+    padding: 20px 20px 0px 0px;
+
+  }
+  .nav-panel {
+    display: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    top: 0px;
+    position: absolute;
+
+    &.active {
+      display: block;
+    }
+
+
+  }
+}

@@ -1,7 +1,16 @@
-<h1>simple blog</h1>
+<div class="body-image">
+  <div class="nav-icon">
+    <i (click)="showMenu()" class="fa fa-bars" aria-hidden="true"></i>
+  </div>
+  <div class="nav-panel" [ngClass]="{ 'active': showNavPanel}">
+    <a routerLink="admin">Panel administracyjny</a>
+    <a routerLink="blog">Blog</a>
+  </div>
 
-<a routerLink="admin">Panel administracyjny</a>
-<a routerLink="blog">Blog</a>
-<HR>
-<router-outlet></router-outlet>
+
+  <router-outlet></router-outlet>
+  <h1>Simple Blog</h1>
+</div>
+
+
 

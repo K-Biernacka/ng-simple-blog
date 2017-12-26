@@ -9,4 +9,9 @@ import { CommentService } from './services/comment.service';
 })
 export class AppComponent {
   title = 'app';
+  showNavPanel = false;
+  showMenu() {
+    this.showNavPanel = !this.showNavPanel;
+  }
+
 }
