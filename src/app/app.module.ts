@@ -8,6 +8,7 @@ import { BlogComponent } from './blog/blog.component';
 import { AdminComponent } from './admin/admin.component';
 import { PanelComponent } from './admin/panel/panel.component';
 import { NewPostComponent } from './admin/panel/new-post/new-post.component';
+import { StartComponent } from './start/start.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { NewPostComponent } from './admin/panel/new-post/new-post.component';
     BlogComponent,
     AdminComponent,
     PanelComponent,
-    NewPostComponent
+    NewPostComponent,
+    StartComponent
   ],
   imports: [
     BrowserModule,

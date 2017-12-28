@@ -4,10 +4,12 @@ import {BlogComponent} from "./blog/blog.component";
 import {AdminComponent} from "./admin/admin.component";
 import {PanelComponent} from "./admin/panel/panel.component";
 import {NewPostComponent} from "./admin/panel/new-post/new-post.component";
+import {StartComponent} from "./start/start.component";
 
 const routes: Routes = [
-  {path: '', pathMatch: 'full', redirectTo: 'blog'},
+  {path: '', pathMatch: 'full', redirectTo: 'start'},
   {path: 'blog', component: BlogComponent},
+  {path: 'start', component: StartComponent},
   {
     path: 'admin',
     component: AdminComponent,
@@ -16,6 +18,7 @@ const routes: Routes = [
       {path: 'panel', component: PanelComponent},
       {path: 'new-post', component: NewPostComponent}
     ]}
+
 ];
 
 @NgModule({
