@@ -1,3 +1,10 @@
-<p>
-  new-post works!
-</p>
+<h1>Add new post</h1>
+
+<form (ngSubmit)="onSubmit()" #newPost="ngForm">
+  <div class="form-group">
+    <input class="form-control" id="post-title" placeholder="Enter post title" required [(ngModel)]="model.title" name="title">
+    <input class="form-control" id="post-abstract" placeholder="Enter abstract of the post" required [(ngModel)]="model.short" name="short">>
+    <input class="form-control" id="post-main" placeholder="Enter post" required [(ngModel)]="model.text" name="text">>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

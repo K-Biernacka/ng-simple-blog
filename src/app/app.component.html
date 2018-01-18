@@ -1,6 +1,6 @@
-<div class="body-image">
+
   <div class="nav-icon">
-    <i (click)="showMenu()" [ngClass]="{ 'active fa-times': showNavPanel, 'fa-bars' : !sho }" class="fa menu-toggle" aria-hidden="true"></i>
+    <i (click)="showMenu()" [ngClass]="{ 'active fa-times': showNavPanel, 'fa-bars' : !showNavPanel }" class="fa menu-toggle" aria-hidden="true"></i>
   </div>
   <div class="nav-panel" [ngClass]="{'active': showNavPanel}">
     <a routerLink="start" class="list">Main page</a>
@@ -9,10 +9,8 @@
 
   </div>
 
-
   <router-outlet></router-outlet>
-  <h1>Simple Blog</h1>
-</div>
+
 
 
 

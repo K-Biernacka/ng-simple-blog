@@ -9,6 +9,8 @@ import { AdminComponent } from './admin/admin.component';
 import { PanelComponent } from './admin/panel/panel.component';
 import { NewPostComponent } from './admin/panel/new-post/new-post.component';
 import { StartComponent } from './start/start.component';
+import { FormsModule }   from '@angular/forms';
+
 
 
 @NgModule({
@@ -22,7 +24,8 @@ import { StartComponent } from './start/start.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

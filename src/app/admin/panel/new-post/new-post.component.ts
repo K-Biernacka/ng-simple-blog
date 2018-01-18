@@ -1,15 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import {NgForm} from "@angular/forms";
+import {Post} from "../../../interfaces/post";
+import {PostService} from "../../../services/post.service";
 
 @Component({
   selector: 'app-new-post',
   templateUrl: './new-post.component.html',
-  styleUrls: ['./new-post.component.scss']
+  styleUrls: ['./new-post.component.scss'],
+  providers: [PostService]
 })
 export class NewPostComponent implements OnInit {
 
-  constructor() { }
+  model: Post = {
+    title : '',
+    short: '',
+    text: ''
+  };
+
+
+  constructor(private postService: PostService) {
+
+  }
 
   ngOnInit() {
+  }
+  onSubmit() {
+    this.postService.addPost(this.model)
   }
 
 }
