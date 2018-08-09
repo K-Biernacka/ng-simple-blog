@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Post } from '../interfaces/post';
-import {allNgComponent} from "codelyzer/walkerFactory/walkerFactory";
 
 @Injectable()
 export class PostService {
@@ -9,23 +8,31 @@ export class PostService {
 
   getPosts(): Post[] {
     let allPosts = localStorage.getItem('posts');
+
     if (!allPosts) {
       return []
     }
-    return allPosts;
+
+    let postsObject = JSON.parse(allPosts);
+
+    if (!postsObject.length) {
+      return []
+    }
+
+    return postsObject;
   };
 
   addPost(post: Post): Post {
     let allPosts = this.getPosts();
     post.id = Date.now();
     allPosts.push(post);
-    localStorage.setItem('posts', 'posts');
+    localStorage.setItem('posts', JSON.stringify(allPosts));
 
-    return;
+    return post;
   }
 
   getPostById(id: number): Post {
-    return;
+    return this.getPosts().find(post => post.id === id );
   }
 
 }

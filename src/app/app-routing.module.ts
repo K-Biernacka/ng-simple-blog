@@ -4,11 +4,13 @@ import {BlogComponent} from "./blog/blog.component";
 import {AdminComponent} from "./admin/admin.component";
 import {PanelComponent} from "./admin/panel/panel.component";
 import {NewPostComponent} from "./admin/panel/new-post/new-post.component";
+import {PostComponent} from './blog/post/post.component';
 import {StartComponent} from "./start/start.component";
 
 const routes: Routes = [
   {path: '', pathMatch: 'full', redirectTo: 'start'},
   {path: 'blog', component: BlogComponent},
+  {path: 'post/:id', component: PostComponent},
   {path: 'start', component: StartComponent},
   {
     path: 'admin',

@@ -1,0 +1,33 @@
+<h1>{{this.model.title}}</h1>
+
+
+<h1>{{this.model.short}}</h1>
+
+<h1>{{this.model.text}}</h1>
+
+
+
+
+
+<h1>Comments</h1>
+
+<h3>Add Comment</h3>
+<form (ngSubmit)="addComment()" #newPost="ngForm">
+  <div class="form-group">
+    <input class="form-control" id="post-title" placeholder="Your name" required [(ngModel)]="comment.name" name="title">
+    <input class="form-control" id="post-abstract" placeholder="Enter abstract of the post" required [(ngModel)]="comment.text" name="short">
+  </div>
+  <button type="submit" class="btn btn-primary">Add it now!</button>
+</form>
+
+
+
+<div *ngFor="let comment of this.comments" class="post">
+  <h2 class="comment-name">
+    {{comment.name}}
+  </h2>
+  <h3 class="comment-text">
+    {{comment.text}}
+  </h3>
+  <hr/>
+</div>

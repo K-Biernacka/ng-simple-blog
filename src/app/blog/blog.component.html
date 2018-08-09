@@ -1,76 +1,15 @@
 <div class="post-site">
   <div class="post-header">
     <h1>Posts</h1>
-
-
     <div class="post-body">
-    <div class="post">
-      <div class="post-title">
-        Giant Panda
-      </div>
-
-      <div class="post-text">
-        This peaceful creature with a distinctive black and white coat is adored by the world and considered a national treasure in China. The panda also has a special significance for WWF because it has been WWF's logo since our founding in 1961.
-
-      </div>
-
-
-
-    </div>
-      <div class="post">
-        <div class="post-title">
-          Giant Panda
-        </div>
-
+      <div *ngFor="let post of this.model" class="post">
+        <a [routerLink]="['/post', post.id]" class="post-title">
+          {{post.title}}
+        </a>
         <div class="post-text">
-          This peaceful creature with a distinctive black and white coat is adored by the world and considered a national treasure in China. The panda also has a special significance for WWF because it has been WWF's logo since our founding in 1961.
-
+          {{post.short}}
         </div>
-
-
-
       </div>
-      <div class="post">
-        <div class="post-title">
-          Giant Panda
-        </div>
-
-        <div class="post-text">
-          This peaceful creature with a distinctive black and white coat is adored by the world and considered a national treasure in China. The panda also has a special significance for WWF because it has been WWF's logo since our founding in 1961.
-
-        </div>
-
-
-
-      </div>
-
-      <!--<div class="comments">-->
-        <!--<p>Add a comment</p>-->
-        <!--<form>-->
-          <!--<div class="form-group">-->
-            <!--<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">-->
-            <!--<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>-->
-          <!--</div>-->
-          <!--<div class="form-group">-->
-            <!--<input placeholder=" Enter name">-->
-          <!--</div>-->
-          <!--<div class="form-group">-->
-            <!--<label for="exampleTextarea">Example textarea</label>-->
-            <!--<textarea class="form-control" id="exampleTextarea" rows="5"></textarea>-->
-          <!--</div>-->
-          <!--<button type="submit" class="btn btn-primary">Submit</button>-->
-        <!--</form>-->
-
-      <!--</div>-->
-
-
-
     </div>
-
   </div>
-
-
 </div>
-
-
-

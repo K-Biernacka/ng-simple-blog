@@ -10,6 +10,7 @@ import { PanelComponent } from './admin/panel/panel.component';
 import { NewPostComponent } from './admin/panel/new-post/new-post.component';
 import { StartComponent } from './start/start.component';
 import { FormsModule }   from '@angular/forms';
+import { PostComponent } from './blog/post/post.component';
 
 
 
@@ -20,7 +21,8 @@ import { FormsModule }   from '@angular/forms';
     AdminComponent,
     PanelComponent,
     NewPostComponent,
-    StartComponent
+    StartComponent,
+    PostComponent
   ],
   imports: [
     BrowserModule,
