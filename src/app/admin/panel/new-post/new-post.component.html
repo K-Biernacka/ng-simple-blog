@@ -3,8 +3,8 @@
 <form (ngSubmit)="onSubmit()" #newPost="ngForm">
   <div class="form-group">
     <input class="form-control" id="post-title" placeholder="Enter post title" required [(ngModel)]="model.title" name="title">
-    <input class="form-control" id="post-abstract" placeholder="Enter abstract of the post" required [(ngModel)]="model.short" name="short">>
-    <input class="form-control" id="post-main" placeholder="Enter post" required [(ngModel)]="model.text" name="text">>
+    <input class="form-control" id="post-abstract" placeholder="Enter abstract of the post" required [(ngModel)]="model.short" name="short">
+    <textarea class="form-control" id="post-main" placeholder="Enter post" required [(ngModel)]="model.text" name="text"></textarea>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary">Add it now!</button>
 </form>

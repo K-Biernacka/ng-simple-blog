@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {NgForm} from "@angular/forms";
 import {Post} from "../../../interfaces/post";
 import {PostService} from "../../../services/post.service";
 
@@ -25,7 +24,14 @@ export class NewPostComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    this.postService.addPost(this.model)
+    this.postService.addPost(this.model);
+
+    this.model = {
+      title : '',
+      short: '',
+      text: ''
+    };
+
   }
 
 }
