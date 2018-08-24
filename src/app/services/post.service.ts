@@ -1,38 +1,33 @@
-import { Injectable } from '@angular/core';
-import { Post } from '../interfaces/post';
+import {Injectable} from '@angular/core';
+import {Post} from '../interfaces/post';
+import {AngularFirestore} from 'angularfire2/firestore';
+import {Observable} from 'rxjs/Observable';
+
 
 @Injectable()
 export class PostService {
+  private db: AngularFirestore;
 
-  constructor() { }
+  constructor(db: AngularFirestore) {
+    this.db = db;
+  }
 
-  getPosts(): Post[] {
-    let allPosts = localStorage.getItem('posts');
 
-    if (!allPosts) {
-      return []
-    }
-
-    let postsObject = JSON.parse(allPosts);
-
-    if (!postsObject.length) {
-      return []
-    }
-
-    return postsObject;
-  };
-
-  addPost(post: Post): Post {
-    let allPosts = this.getPosts();
-    post.id = Date.now();
-    allPosts.push(post);
-    localStorage.setItem('posts', JSON.stringify(allPosts));
-
+  async addPost(post: Post): Promise<Post> {
+    const id = this.db.createId();
+    post.id = id;
+    await this.db.collection<Post>('posts').doc(id).set(post);
     return post;
   }
 
-  getPostById(id: number): Post {
-    return this.getPosts().find(post => post.id === id );
+  getPostById(id: string): Observable<Post> {
+    return this.db.doc<Post>(`posts/${id}`).valueChanges();
+  }
+
+  getPosts(): Observable<Post[]> {
+    return this.db.collection<Post>('posts').valueChanges();
   }
 
 }
+
+

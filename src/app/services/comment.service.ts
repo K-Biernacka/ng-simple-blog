@@ -1,42 +1,30 @@
 import { Injectable } from '@angular/core';
 import { Comment } from '../interfaces/comment';
+import {AngularFirestore, DocumentReference} from 'angularfire2/firestore';
+import {Post} from '../interfaces/post';
+import {Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class CommentService {
 
-  constructor() { }
+  db: AngularFirestore;
 
-  getComments() {
-    let allComments = localStorage.getItem('comments');
-
-    if (!allComments) {
-      return []
-    }
-
-    let comments = JSON.parse(allComments);
-
-    if (!comments.length) {
-      return []
-    }
-
-    return comments;
-
+  constructor(db: AngularFirestore) {
+    this.db = db;
   }
 
-  getCommentsByPostId(postId: number): Comment[] {
+  getCommentsByPostId(postId: string): Observable<Comment[]> {
+    return this.db.collection<Post>('posts')
+      .doc(postId)
+      .collection<Comment>('comments', ref => ref.orderBy('timestamp', 'desc'))
+      .valueChanges();
+  }
 
-    return this.getComments().filter(comment => comment.postId === postId);
-
-  };
-
-  addComment(comment: Comment): Comment {
-    let allComments = this.getComments();
-    comment.id = Date.now();
-    allComments.push(comment);
-    localStorage.setItem('comments', JSON.stringify(allComments));
-
-    return comment;
-  };
-
+  addComment(postId: string, comment: Comment): Promise<DocumentReference> {
+    return this.db.collection<Post>('posts')
+      .doc(postId)
+      .collection<Comment>('comments')
+      .add(comment);
+  }
 
 }

@@ -1,9 +1,10 @@
-<h1>{{this.model.title}}</h1>
+<h1>{{ (post | async)?.title}}</h1>
 
 
-<h1>{{this.model.short}}</h1>
 
-<h1>{{this.model.text}}</h1>
+<h1>{{(post | async)?.short}}</h1>
+
+<h1>{{(post | async)?.text}}</h1>
 
 
 
@@ -22,7 +23,7 @@
 
 
 
-<div *ngFor="let comment of this.comments" class="post">
+<div *ngFor="let comment of this.comments | async" class="post">
   <h2 class="comment-name">
     {{comment.name}}
   </h2>

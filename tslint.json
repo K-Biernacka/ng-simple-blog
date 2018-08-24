@@ -130,7 +130,7 @@
       "app",
       "kebab-case"
     ],
-    "angular-whitespace": [true, "check-interpolation"],
+    "angular-whitespace": false,
     "no-output-on-prefix": true,
     "use-input-property-decorator": true,
     "use-output-property-decorator": true,
