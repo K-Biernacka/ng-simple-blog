@@ -2,20 +2,10 @@
   <div class="post-header">
     <h1>Posts</h1>
     <div class="post-body">
-      <div *ngFor="let post of this.model" class="post">
-        <a [routerLink]="['/post', post.id]" class="post-title">
-          {{post.title}}
-        </a>
-        <div class="post-text">
-          {{post.short}}
-        </div>
-      </div>
-
-
 
       <div *ngFor="let post of this.posts | async" class="post">
         <a [routerLink]="['/post', post.id]" class="post-title">
-          {{post.title}}
+          {{post.title}} ({{ post.author }})
         </a>
         <div class="post-text">
           {{post.short}}

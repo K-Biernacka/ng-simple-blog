@@ -3,4 +3,5 @@ export interface Post {
   text: string;
   id?: string;
   short: string;
+  author: string;
 }

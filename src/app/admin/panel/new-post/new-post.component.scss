@@ -1,17 +1,15 @@
 form {
   margin-right: 150px;
   margin-left: 150px;
-  input {
-    margin-top: 10px;
-    overflow: auto;
 
-  }
   #post-abstract {
     height: 76px;
     overflow: scroll;
+    margin-top: 10px;
   }
   #post-main {
     height: 228px;
     overflow: scroll;
+    margin-top: 10px;
   }
 }

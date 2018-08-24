@@ -1,10 +1,21 @@
 <h1>Add new post</h1>
 
-<form (ngSubmit)="onSubmit()" #newPost="ngForm">
-  <div class="form-group">
-    <input class="form-control" id="post-title" placeholder="Enter post title" required [(ngModel)]="model.title" name="title">
-    <input class="form-control" id="post-abstract" placeholder="Enter abstract of the post" required [(ngModel)]="model.short" name="short">
-    <textarea class="form-control" id="post-main" placeholder="Enter post" required [(ngModel)]="model.text" name="text"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Add it now!</button>
-</form>
+
+
+<div *ngIf="afAuth.user | async as user; else showLogin">
+  <h1>Hello {{ user.displayName }}!</h1>
+  <button (click)="logout()" class="btn btn-primary">Logout</button>
+
+  <form (ngSubmit)="onSubmit()" #newPost="ngForm">
+    <div class="form-group">
+      <input class="form-control" id="post-title" placeholder="Enter post title" required [(ngModel)]="model.title" name="title">
+      <input class="form-control" id="post-abstract" placeholder="Enter abstract of the post" required [(ngModel)]="model.short" name="short">
+      <textarea class="form-control" id="post-main" placeholder="Enter post" required [(ngModel)]="model.text" name="text"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Add it now!</button>
+  </form>
+</div>
+<ng-template #showLogin>
+  <p>Please login.</p>
+  <button (click)="login()" class="btn btn-primary">Login with Google</button>
+</ng-template>

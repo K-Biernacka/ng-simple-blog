@@ -1,15 +1,15 @@
 .post-site{
+  background-color: rgba(0, 0, 0, 0.6);
+  width: 100vw;
+  height: 100vh;
+
 
   .post-header {
 
   }
 
   .post-body {
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100vw;
-    height: 100vh;
-    position: relative;
-    top: 50px;
+
     .post {
       display: flex;
       flex-direction: column;
@@ -17,24 +17,20 @@
       .post-title {
         color: #ffffff;
         font-family: 'Raleway', sans-serif;
-        font-size: 20px;
+        font-size: 30px;
         margin: 20px 0px 20px 20px;
         font-weight: bold;
-
 
       }
       .post-text {
         text-align: center;
         color: #ffffff;
         font-family: 'Raleway', sans-serif;
-        width: 600px;
+        width: 400px;
         height: 100px;
-
-
+        font-size: 20px;
         margin: 0px 20px 0px 20px;
         position: relative;
-
-
       }
     }
     .comments {
@@ -50,5 +46,6 @@
   }
 
 }
+
 
 

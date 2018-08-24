@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Comment } from '../interfaces/comment';
 import {AngularFirestore, DocumentReference} from 'angularfire2/firestore';
 import {Post} from '../interfaces/post';
-import {Observable} from 'rxjs/Observable';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class CommentService {
