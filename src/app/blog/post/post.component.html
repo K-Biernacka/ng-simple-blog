@@ -1,34 +1,28 @@
-<h1>{{ (post | async)?.title}}</h1>
-<h3>{{ (post | async)?.author }}</h3>
+<div class="single-post-page">
+  <div class="title">{{ (post | async)?.title}}</div>
+  <div class="author"> Posted by: {{ (post | async)?.author }}</div>
+  <div class="short-post">{{(post | async)?.short}}</div>
+  <div class="whole-post">{{(post | async)?.text}}</div>
+
+  <h1>Comments</h1>
+
+  <h4>Add Comment</h4>
+  <form (ngSubmit)="addComment()" #newPost="ngForm">
+    <div class="form-group">
+      <input class="form-control" id="post-title" placeholder="Your name" required [(ngModel)]="comment.name" name="title">
+      <input class="form-control" id="post-abstract" placeholder="Enter your comment" required [(ngModel)]="comment.text" name="short">
+    </div>
+    <button type="submit" class="btn btn-primary">Add it now!</button>
+  </form>
 
 
-<h1>{{(post | async)?.short}}</h1>
 
-<h1>{{(post | async)?.text}}</h1>
-
-
-
-
-
-<h1>Comments</h1>
-
-<h3>Add Comment</h3>
-<form (ngSubmit)="addComment()" #newPost="ngForm">
-  <div class="form-group">
-    <input class="form-control" id="post-title" placeholder="Your name" required [(ngModel)]="comment.name" name="title">
-    <input class="form-control" id="post-abstract" placeholder="Enter abstract of the post" required [(ngModel)]="comment.text" name="short">
+  <div *ngFor="let comment of this.comments | async" class="comment">
+    <div class="comment-name">{{comment.name}}</div>
+    <div class="comment-text">{{comment.text}}</div>
+    <hr/>
   </div>
-  <button type="submit" class="btn btn-primary">Add it now!</button>
-</form>
-
-
-
-<div *ngFor="let comment of this.comments | async" class="post">
-  <h2 class="comment-name">
-    {{comment.name}}
-  </h2>
-  <h3 class="comment-text">
-    {{comment.text}}
-  </h3>
-  <hr/>
 </div>
+
+
+

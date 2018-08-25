@@ -1,17 +1,14 @@
-
-
   .nav-icon {
     display: flex;
     justify-content: flex-end;
-
   }
   h1 {
     text-align: center;
     color: #ffffff;
     font-family: 'Raleway', sans-serif;
     font-size: 60px;
+    margin-top: 50px;
   }
-
   .nav-panel {
     display: none;
     background-color: rgba(0, 0, 0, 1.0);
@@ -20,7 +17,6 @@
     top: 0px;
     position: absolute;
     z-index: 1000;
-
     &.active {
       display: block;
     }
@@ -38,9 +34,6 @@
     a:hover {
       color: grey;
     }
-
-
-
   }
   .menu-toggle {
     color: white;
@@ -48,6 +41,5 @@
     padding: 20px 20px 0px 0px;
     position: fixed;
     right: 20px;
-      z-index: 1001;
-
+    z-index: 1001;
   }
