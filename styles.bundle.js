@@ -35,7 +35,7 @@ exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-b
 
 
 // module
-exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nbody {\n  margin: 0px;\n  background: url(\"/git@github.com:K-Biernacka/ng-simple-blog.git/assets/stars.jpg\") no-repeat center center fixed;\n  height: 100vh;\n  background-size: cover;\n}\n", ""]);
+exports.push([module.i, "/* You can add global styles to this file, and also import other style files */\nbody {\n  margin: 0px;\n  background: url(\"/assets/stars.jpg\") no-repeat center center fixed;\n  height: 100vh;\n  background-size: cover;\n}\n", ""]);
 
 // exports
 
