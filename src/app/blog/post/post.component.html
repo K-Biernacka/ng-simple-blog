@@ -1,8 +1,15 @@
 <div class="single-post-page">
-  <div class="title">{{ (post | async)?.title}}</div>
-  <div class="author"> Posted by: {{ (post | async)?.author }}</div>
-  <div class="short-post">{{(post | async)?.short}}</div>
-  <div class="whole-post">{{(post | async)?.text}}</div>
+
+  <div *ngIf="(post | async) as loadedPost; else loading">
+    <div class="title">{{ loadedPost.title}}</div>
+    <div class="author"> Posted by: {{ loadedPost.author }}</div>
+    <div class="short-post">{{loadedPost.short}}</div>
+    <div class="whole-post">{{loadedPost.text}}</div>
+  </div>
+
+  <ng-template #loading>
+    <app-spinner></app-spinner>
+  </ng-template>
 
   <h1>Comments</h1>
 

@@ -2,6 +2,7 @@
   <!--<div class="post-header">-->
     <h1>Posts</h1>
     <div class="post-body">
+      <app-spinner *ngIf="showSpinner"></app-spinner>
 
       <div *ngFor="let post of this.posts | async" class="post">
         <a [routerLink]="['/post', post.id]" class="post-title">
@@ -12,8 +13,8 @@
         </div>
       </div>
 
-
     </div>
   <!--</div>-->
 </div>
+
 

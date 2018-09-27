@@ -29,6 +29,7 @@ export class PostComponent implements OnInit {
   ngOnInit() {
 
     this.postId = this.route.snapshot.paramMap.get('id');
+
     this.post = this.postService.getPostById(this.postId);
     this.comments = this.commentService.getCommentsByPostId(this.postId);
 

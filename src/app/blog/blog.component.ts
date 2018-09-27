@@ -12,14 +12,17 @@ import {Observable} from 'rxjs';
 })
 export class BlogComponent implements OnInit {
 
-  model: Post[];
+
   posts: Observable<Post[]>;
+  showSpinner: boolean = true;
+
 
   constructor(private postService: PostService) {
     this.posts = postService.getPosts();
   }
 
   ngOnInit() {
+    this.posts.subscribe(() => this.showSpinner = false)
   }
 
 }
